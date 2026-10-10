@@ -1,0 +1,25 @@
+
+syntax = "proto3";
+
+package produto;
+
+option java_package = "com.mycompany.produtorpc";
+option java_multiple_files = true;
+
+service ProdutoService {
+    rpc CalcularProduto (RequisicaoProduto) returns (RespostaProduto);
+
+}
+
+
+message RequisicaoProduto {
+    string nome = 1;
+    double preco = 2;
+    int32 quantidade = 3;
+    double desconto = 4;
+}
+
+message RespostaProduto {
+    string mensagem = 1;
+}
+
